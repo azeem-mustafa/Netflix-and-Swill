@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="./styles/css/main.css">
 </head>
 <body> 
-    <div class="netflix">
+
+    <!--this is the section that fades in and out-->
+    <section class="netflix">
         <div class="netflix-flexbox">
             <div class="netflix-flexbox__logo">
                 <span></span>
@@ -21,14 +23,16 @@
             
             </div>
 
-            <div class="netflix__header">
-                <a class="netflix__header-logo" href="https://www.netflix.com/">NETFLIX</a>
-                <h2 class="netflix__header-text-one">and</h2>
-                <h2 class="netflix__header-text-two">SWILL</h2>
-            </div>
+        <!--this is the actual header that will displayed after the intro animation-->
+        <header class="netflix__header">
+            <a class="netflix__header-logo" href="https://www.netflix.com/">NETFLIX</a>
+            <h2 class="netflix__header-text-one">and</h2>
+            <h2 class="netflix__header-text-two">SWILL</h2>
+        </header>
+    
+        <form class="form">
 
-            <form class="form">
-                <label for="genre">What kind of movie are we watching tonight, Boo?</label>
+            <label class="form__label" for="genre">What are we watching tonight, Boo?</label>
                 <select class="form__genre " name="genre">
                     <option value="action">Action and Adventure</option>
                     <option value="anime">Anime</option>
@@ -38,10 +42,12 @@
                     <option value="sci-fi">Sci-Fi and Fantasy</option>
                     <option value="comedies">Comedies</option>
                 </select>
-    
-            </form>
-    </div>
-          
-     
+                <button class="form__button" type="submit">This sounds good!</button>
+        </form>
+
+        <label for="typeOfMovie">Cool babes! So, show or movie?</label>
+
+    </section>
+             
 </body>
 </html>
