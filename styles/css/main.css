@@ -1,0 +1,165 @@
+@font-face {
+  font-family: "Rumble Brave";
+  src: url("../../assets/fonts/Untitled.woff2") format("woff2"), url("../../assets/fonts/Untitled.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.netflix {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #000;
+}
+.netflix-flexbox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.netflix-flexbox__logo {
+  position: relative;
+  width: 22.5rem;
+  height: 32.5rem;
+  overflow: hidden;
+  transform: scale(0.5);
+}
+.netflix-flexbox__logo::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6.25rem;
+  width: 100%;
+  height: 7.5rem;
+  background: #000;
+  z-index: 2;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  transform: scaleX(1.5);
+}
+.netflix-flexbox__logo:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #000, #000);
+  z-index: 3;
+  -webkit-animation: animate 2s linear forwards;
+          animation: animate 2s linear forwards;
+}
+@-webkit-keyframes animate {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: -400%;
+  }
+}
+@keyframes animate {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: -400%;
+  }
+}
+
+span {
+  position: absolute;
+  top: 0;
+  width: 7.5rem;
+  height: 100%;
+  background: #fff;
+}
+
+span:nth-child(1) {
+  background: #b00612;
+  left: 0;
+}
+
+span:nth-child(2) {
+  background: #e50815;
+  left: 7.25rem;
+  z-index: 1;
+  transform: skewX(20deg);
+  box-shadow: 0 0 2.5rem black;
+}
+
+span:nth-child(3) {
+  background: #b00612;
+  right: 0.375rem;
+}
+
+h1 {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Rumble Brave";
+  font-weight: 700;
+  font-size: 4rem;
+  color: #F3F3F3;
+  font-size: 6.875rem;
+  letter-spacing: 0.625rem;
+  padding-bottom: 2rem;
+  overflow: hidden;
+}
+h1:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #000, #000);
+  z-index: 3;
+  -webkit-animation: animate 3s linear forwards;
+          animation: animate 3s linear forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+@keyframes animate {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: -400%;
+  }
+}
+
+h3 {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #F3F3F3;
+  font-size: 1.875rem;
+  letter-spacing: 0.625rem;
+  padding-bottom: 1rem;
+  overflow: hidden;
+}
+h3:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #000, #000);
+  z-index: 3;
+  -webkit-animation: animate 2s linear forwards;
+          animation: animate 2s linear forwards;
+}
+@keyframes animate {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: -400%;
+  }
+}/*# sourceMappingURL=main.css.map */

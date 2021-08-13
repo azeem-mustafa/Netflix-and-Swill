@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Rumble Brave';
+    src: url('../../assets/fonts/Untitled.woff2') format('woff2'),
+        url('../../assets/fonts/Untitled.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@mixin page-header {
+    font-family: 'Rumble Brave';
+    font-weight: 700;
+    font-size: 4rem;
+}
