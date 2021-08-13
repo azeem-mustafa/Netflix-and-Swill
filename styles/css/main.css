@@ -5,6 +5,60 @@
   font-style: normal;
   font-display: swap;
 }
+/*keyframes fade in and out*/
+@-webkit-keyframes animate {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: -400%;
+  }
+  75% {
+    right: -400%;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes animate {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: -400%;
+  }
+  75% {
+    right: -400%;
+  }
+  100% {
+    right: 0;
+  }
+}
+/*Keyframes to fade in the header*/
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+    z-index: 5;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+    z-index: 5;
+  }
+}
 /*main container for page*/
 .netflix {
   display: flex;
@@ -65,16 +119,14 @@ h1 {
   margin: 0;
   padding: 0;
   text-align: center;
+  color: #F3F3F3;
+  overflow: hidden;
+  font-size: 6.875rem;
+  letter-spacing: 0.625rem;
+  padding-bottom: 2rem;
   font-family: "Rumble Brave";
   font-weight: 700;
   font-size: 4rem;
-  color: #F3F3F3;
-  font-size: 6.875rem;
-  top: 1rem;
-  z-index: 1;
-  letter-spacing: 0.625rem;
-  padding-bottom: 2rem;
-  overflow: hidden;
 }
 h1:after {
   content: "";
@@ -95,15 +147,13 @@ h3 {
   position: relative;
   margin: 0;
   padding: 0;
-  bottom: 4rem;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
   color: #F3F3F3;
+  overflow: hidden;
   font-size: 1.875rem;
   letter-spacing: 0.625rem;
-  z-index: 1;
-  overflow: hidden;
-  /*keyframes fade in and out*/
+  font-family: Arial, Helvetica, sans-serif;
+  bottom: 4rem;
 }
 h3:after {
   content: "";
@@ -114,34 +164,6 @@ h3:after {
   z-index: 1;
   -webkit-animation: animate 9s linear forwards;
           animation: animate 9s linear forwards;
-}
-@-webkit-keyframes animate {
-  0% {
-    right: 0%;
-  }
-  100% {
-    right: -400%;
-  }
-  75% {
-    right: -400%;
-  }
-  100% {
-    right: 0;
-  }
-}
-@keyframes animate {
-  0% {
-    right: 0%;
-  }
-  100% {
-    right: -400%;
-  }
-  75% {
-    right: -400%;
-  }
-  100% {
-    right: 0;
-  }
 }
 
 /*this is the stylings for the actual header*/
@@ -156,12 +178,17 @@ h3:after {
   border-bottom: #F3F3F3 0.5rem solid;
 }
 .netflix__header-logo {
+  position: relative;
+  display: flex;
+  top: 0.5rem;
   color: #e50914;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2rem;
   letter-spacing: 0.625rem;
   padding-bottom: 1rem;
+  -webkit-animation: fadein 10s forwards;
+          animation: fadein 10s forwards;
 }
 @media (min-width: 80rem) {
   .netflix__header-logo {
@@ -171,13 +198,11 @@ h3:after {
 .netflix__header-text-one {
   color: #F3F3F3;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
   letter-spacing: 0.625rem;
   -webkit-margin-before: 0;
           margin-block-start: 0;
   -webkit-margin-after: 0;
           margin-block-end: 0;
-  padding-bottom: 1rem;
   -webkit-animation: fadein 10s forwards;
           animation: fadein 10s forwards;
 }
@@ -205,18 +230,11 @@ h3:after {
     font-size: 4rem;
   }
 }
-.netflix__header-logo {
-  position: relative;
-  display: flex;
-  top: 0.5rem;
-  left: 0.5rem;
-  max-height: 8rem;
-  -webkit-animation: fadein 10s forwards;
-          animation: fadein 10s forwards;
-}
 
 /*stylings for the form*/
 .form {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
@@ -225,14 +243,9 @@ h3:after {
   letter-spacing: 0.625rem;
   padding-bottom: 1rem;
   height: 3rem;
-  margin-bottom: 3rem;
-  display: flex;
-  flex-direction: column;
   color: #e50914;
   -webkit-animation: fadein 10s forwards;
           animation: fadein 10s forwards;
-  /*second radio question*/
-  /*Keyframes to fade in the header*/
 }
 .form__label {
   position: relative;
@@ -246,7 +259,6 @@ h3:after {
   }
 }
 .form__button {
-  position: relative;
   padding: 1rem;
   margin-right: auto;
   margin-left: auto;
@@ -257,9 +269,6 @@ h3:after {
   letter-spacing: 0.5rem;
   font-family: "Rumble Brave";
   width: 60%;
-  z-index: 5;
-  margin-left: auto;
-  margin-right: auto;
   box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem #686868;
 }
 @media (min-width: 80rem) {
@@ -268,9 +277,8 @@ h3:after {
   }
 }
 .form__genre {
-  position: relative;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
   padding: 1rem;
   margin-bottom: 2rem;
   border-radius: 0.5rem;
@@ -300,27 +308,5 @@ h3:after {
     font-size: 3rem;
   }
 }
-@-webkit-keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-  90% {
-    opacity: 0%;
-  }
-  100% {
-    opacity: 100%;
-    z-index: 5;
-  }
-}
-@keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-  90% {
-    opacity: 0%;
-  }
-  100% {
-    opacity: 100%;
-    z-index: 5;
-  }
-}/*# sourceMappingURL=main.css.map */
+
+/*second radio question*//*# sourceMappingURL=main.css.map */

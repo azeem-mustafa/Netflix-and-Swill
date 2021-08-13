@@ -1,6 +1,7 @@
 @use './partials/variables' as *;
 @use './partials/typography' as *;
 @use './mixins/mixin' as *;
+@use './partials/animations' as *;
 
 /*main container for page*/
 .netflix{
@@ -54,66 +55,26 @@ span:nth-child(3){
 /*the H tags are the subheaders*/
 
 h1{
-    position: relative;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    @include page-header;
-    color: $light;
+    @include headers-general-stylings;
     font-size: 6.875rem;
-    top: 1rem;
-    z-index: 1;
     letter-spacing: 0.625rem;
     padding-bottom: 2rem;
-    overflow: hidden;
+    @include page-header;
 
     &:after{
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 400%;
-        height: 100%;
-        background: linear-gradient(to right, transparent, #000, #000);
-        z-index: 1;
-        animation: animate 6s linear forwards;
-        animation-delay: 3s;
+       @include intro-animation-h1;
     }
 }
 
 h3{
-    position: relative;
-    margin: 0;
-    padding: 0;
-    bottom: 4rem;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: $light;
+    @include headers-general-stylings;
     font-size: 1.875rem;
     letter-spacing: 0.625rem;
-    z-index: 1;
-    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    bottom: 4rem;
     
     &:after{
         @include intro-animation-sytles-logo;
-    }
-
-    /*keyframes fade in and out*/
-    @keyframes animate{
-        0%{
-            right: 0%;
-        }
-        
-        100%{
-            right: -400%;
-        }
-
-        75%{
-            right: -400%;
-        }
-        100%{
-            right: 0;
-        }
     }
 }
 
@@ -130,12 +91,16 @@ h3{
     border-bottom: $light 0.5rem solid;
     
     &-logo{
+        position: relative;
+        display: flex;
+        top: 0.5rem;
         color: $netflix-darkRed;
         text-decoration: none;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 2rem;
         letter-spacing: 0.625rem;
         padding-bottom: 1rem;
+        animation: fadein 10s forwards;
 
         @include desktop{
             font-size: 4rem;
@@ -145,11 +110,8 @@ h3{
     &-text-one{
         color: $light;
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 1rem;
         letter-spacing: 0.625rem;
-        margin-block-start: 0;
-        margin-block-end: 0;
-        padding-bottom: 1rem;
+        @include margin-reset;
         animation: fadein 10s forwards;
 
         @include desktop{
@@ -159,8 +121,7 @@ h3{
 
     &-text-two{
         color: $light;
-        margin-block-start: 0;
-        margin-block-end: 0;
+        @include margin-reset;
         padding-bottom: 1rem;
         animation: fadein 10s forwards;
         @include header-header;
@@ -169,88 +130,64 @@ h3{
             font-size: 4rem;
         }
     }
-
-    &-logo{
-        position: relative;
-        display: flex;
-        top: 0.5rem;
-        left: 0.5rem;
-        max-height: 8rem;
-        animation: fadein 10s forwards;
-    }
 }
 
 /*stylings for the form*/
 
 .form{
+    display: flex;
+    flex-direction: column;
     position: absolute;
     @include text-general;
     height: 3rem;
-    margin-bottom: 3rem;
-    display: flex;
-    flex-direction: column;
     color: $netflix-darkRed;
     animation: fadein 10s forwards;
 
     &__label{
         position: relative;
         text-align: center;
-    padding: 0 2rem;
-    bottom: 3rem;
+        padding: 0 2rem;
+        bottom: 3rem;
 
     @include desktop{
         font-size: 5rem;
-    }
+        }
     }
 
     &__button{
-        position: relative;
+        
         padding: 1rem;
         margin-right: auto;
         margin-left: auto;
         border-radius: .5rem;
-       
         background-color: $light;
         color: $netflix-red;
         font-size: 1rem;
         letter-spacing: 0.5rem;
         font-family: 'Rumble Brave';
         width: 60%;
-        z-index: 5;
-        
-        margin-left: auto;
-        margin-right: auto;
-      
         box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem $dark;
 
         @include desktop{
             font-size: 3rem;
         }
-    
     }
 
 
     &__genre{
-        position: relative;
-        margin-right: auto;
         margin-left: auto;
+        margin-right: auto;
         padding: 1rem;
-        
         margin-bottom: 2rem;
         border-radius: .5rem;
         width: 80%;
-        
         background-color: $light;
         color: #000;
         font-size: 1rem;
         letter-spacing: 0.5rem;
         font-weight: 600;
-       
         box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem $dark;
 
-        
-
-   
         option{
             background-color: $light;
             color: #000;
@@ -260,15 +197,15 @@ h3{
             box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem $dark;
            
 
-            @include desktop{
-                font-size: 3rem;
+        @include desktop{
+            font-size: 3rem;
             }
         }
         @include desktop{
             font-size: 3rem;
         }
     }
-
+}
 
 
 /*second radio question*/
@@ -293,19 +230,5 @@ h3{
     // }
 
 
-
-
-    
-    /*Keyframes to fade in the header*/
-    @keyframes fadein{
-        0%{opacity: 0;}
-        90%{opacity: 0%;}
-        100%{
-            opacity: 100%;
-            z-index: 5;
-        }
-        
-    }
-}
    
 

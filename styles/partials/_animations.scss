@@ -1,8 +1,14 @@
-@keyframes BottomToTop{
-    from{
-        height: 0%;
-    }
-    to{
-        height: 100%;
-    }
+/*keyframes fade in and out*/
+@keyframes animate{
+    0%{right: 0%;}
+    100%{right: -400%;}
+    75%{right: -400%;}
+    100%{right: 0;}
+}
+
+/*Keyframes to fade in the header*/
+@keyframes fadein{
+    0%{opacity: 0;}
+    90%{opacity: 0%;}
+    100%{opacity: 100%;z-index: 5;} 
 }
