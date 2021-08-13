@@ -163,6 +163,11 @@ h3:after {
   letter-spacing: 0.625rem;
   padding-bottom: 1rem;
 }
+@media (min-width: 80rem) {
+  .netflix__header-logo {
+    font-size: 4rem;
+  }
+}
 .netflix__header-text-one {
   color: #F3F3F3;
   font-family: Arial, Helvetica, sans-serif;
@@ -175,6 +180,11 @@ h3:after {
   padding-bottom: 1rem;
   -webkit-animation: fadein 10s forwards;
           animation: fadein 10s forwards;
+}
+@media (min-width: 80rem) {
+  .netflix__header-text-one {
+    font-size: 4rem;
+  }
 }
 .netflix__header-text-two {
   color: #F3F3F3;
@@ -189,6 +199,11 @@ h3:after {
   font-weight: 700;
   font-size: 2rem;
   letter-spacing: 0.625rem;
+}
+@media (min-width: 80rem) {
+  .netflix__header-text-two {
+    font-size: 4rem;
+  }
 }
 .netflix__header-logo {
   position: relative;
@@ -216,6 +231,7 @@ h3:after {
   color: #e50914;
   -webkit-animation: fadein 10s forwards;
           animation: fadein 10s forwards;
+  /*second radio question*/
   /*Keyframes to fade in the header*/
 }
 .form__label {
@@ -223,6 +239,11 @@ h3:after {
   text-align: center;
   padding: 0 2rem;
   bottom: 3rem;
+}
+@media (min-width: 80rem) {
+  .form__label {
+    font-size: 5rem;
+  }
 }
 .form__button {
   position: relative;
@@ -240,6 +261,11 @@ h3:after {
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem #686868;
+}
+@media (min-width: 80rem) {
+  .form__button {
+    font-size: 3rem;
+  }
 }
 .form__genre {
   position: relative;
@@ -263,6 +289,16 @@ h3:after {
   letter-spacing: 0.5rem;
   font-weight: 600;
   box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem #686868;
+}
+@media (min-width: 80rem) {
+  .form__genre option {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 80rem) {
+  .form__genre {
+    font-size: 3rem;
+  }
 }
 @-webkit-keyframes fadein {
   0% {
