@@ -254,7 +254,6 @@ h3:after {
   font-size: 1rem;
   letter-spacing: 0.5rem;
   font-weight: 600;
-  z-index: 5;
   box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem #686868;
 }
 .form__genre option {
@@ -264,4 +263,28 @@ h3:after {
   letter-spacing: 0.5rem;
   font-weight: 600;
   box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem #686868;
+}
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+    z-index: 5;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+    z-index: 5;
+  }
 }/*# sourceMappingURL=main.css.map */
