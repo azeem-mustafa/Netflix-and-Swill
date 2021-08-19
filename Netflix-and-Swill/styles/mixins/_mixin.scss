@@ -1,0 +1,51 @@
+@use '../partials/variables' as *;
+
+@mixin tablet{
+    @media(min-width: $breakpoint-tablet){
+        @content;
+    }
+}
+
+@mixin desktop{
+    @media(min-width: $breakpoint-desktop){
+        @content;
+    }
+}
+
+@mixin intro-animation-sytles-logo{
+    content: '';
+    position: absolute;
+    width: 400%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, #000, #000);
+    z-index: 1;
+    animation: animate 9s linear forwards;
+}
+
+@mixin intro-animation-h1{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, #000, #000);
+    z-index: 1;
+    animation: animate 6s linear forwards;
+    animation-delay: 3s;
+}
+
+
+@mixin headers-general-stylings{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: $light;
+    overflow: hidden;
+}
+
+@mixin margin-reset{
+    margin-block-start: 0;
+    margin-block-end: 0;
+}

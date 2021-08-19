@@ -1,0 +1,226 @@
+@use './partials/variables' as *;
+@use './partials/typography' as *;
+@use './mixins/mixin' as *;
+@use './partials/animations' as *;
+
+/*main container for page*/
+.netflix{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #000;
+  
+  
+    &-flexbox{
+        position: absolute;
+       
+        &__logo{
+            position: relative;
+            width: 22.5rem;
+            height: 32.5rem;
+            overflow: hidden;
+            transform: scale(.5);
+        
+            &:after{
+                @include intro-animation-sytles-logo;
+            }
+        }
+    }
+}
+
+/*the spans create the red N in the intro*/
+span{
+    position: absolute;
+    width: 7.5rem;
+    height: 100%;
+}
+span:nth-child(1){
+    background: $netflix-red;
+    left: 0;
+}
+
+span:nth-child(2){
+    background: $netflix-darkRed;
+    left: 7.25rem;
+    z-index: 1;
+    transform: skewX(20deg);
+    box-shadow: 0 0 2.5rem rgba((0), 0, 0, 1);
+}
+
+span:nth-child(3){
+    background: $netflix-red;
+    right: 0.375rem;
+}
+
+/*the H tags are the subheaders*/
+
+
+h1{
+    @include headers-general-stylings;
+    font-size: 6.875rem;
+    letter-spacing: 0.625rem;
+    padding-bottom: 2rem;
+    @include page-header;
+
+    &:after{
+       @include intro-animation-h1;
+    }
+}
+
+h3{
+    @include headers-general-stylings;
+    font-size: 1.875rem;
+    letter-spacing: 0.625rem;
+    font-family: Arial, Helvetica, sans-serif;
+    bottom: 4rem;
+    
+    &:after{
+        @include intro-animation-sytles-logo;
+    }
+}
+
+
+/*this is the stylings for the actual header*/
+
+.netflix__header{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    padding: 0 5rem 0 5rem;
+    top: 1rem;
+    border-bottom: $light 0.5rem solid;
+    
+    &-logo{
+        position: relative;
+        display: flex;
+        top: 0.5rem;
+        color: $netflix-darkRed;
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2rem;
+        letter-spacing: 0.625rem;
+        padding-bottom: 1rem;
+        animation: fadein 10s forwards;
+
+        @include desktop{
+            font-size: 4rem;
+        }
+    }
+
+    &-text-one{
+        color: $light;
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 0.625rem;
+        @include margin-reset;
+        animation: fadein 10s forwards;
+
+        @include desktop{
+            font-size: 4rem;
+        }
+    }
+
+    &-text-two{
+        color: $light;
+        @include margin-reset;
+        padding-bottom: 1rem;
+        animation: fadein 10s forwards;
+        @include header-header;
+
+        @include desktop{
+            font-size: 4rem;
+        }
+    }
+}
+
+/*stylings for the form*/
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    @include text-general;
+    height: 3rem;
+    color: $netflix-darkRed;
+    animation: fadein 10s forwards;
+
+    &__label{
+        position: relative;
+        text-align: center;
+        padding: 0 2rem;
+        bottom: 3rem;
+
+    @include desktop{
+        font-size: 5rem;
+        }
+    }
+
+    &__genre{
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        border-radius: .5rem;
+        width: 80%;
+        background-color: $light;
+        color: #000;
+        font-size: 1rem;
+        letter-spacing: 0.5rem;
+        font-weight: 600;
+        box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem $dark;
+
+        ::selection{
+            animation: fadeout 2s forwards;
+        }
+
+    
+
+        option{
+            background-color: $light;
+            color: #000;
+            font-size: .8rem;
+            letter-spacing: 0.5rem;
+            font-weight: 600;
+            box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem $dark;
+            
+            ::selection{
+                animation: fadeout 2s forwards;
+            }
+            
+   
+           
+
+        @include desktop{
+            font-size: 3rem;
+            }
+        }
+        @include desktop{
+            font-size: 3rem;
+        }
+    }
+}    
+    /*Keyframes to fade in the header*/
+  
+
+.drink-box {
+    color: $netflix-darkRed;
+    @include text-general;
+
+    &__img {
+       width: 10rem;
+       height: 10rem;
+        background-size: 100%;
+        background-position: center;
+    }
+}
+.drinks {
+    background-color: #000;
+    display: flex;
+}
+
+.film__title {
+    @include header-header;
+}
